@@ -7,26 +7,44 @@ class CalendarDayButtonWidget extends StatelessWidget {
   bool isHighlighted;
   int selectedDay;
   final void Function(int)? onSelectDay;
+  final TextStyle dayTextStyle;
+  final double buttonPadding;
+  final ButtonStyle? style;
+  final ButtonStyle? selectedStyle;
+
   CalendarDayButtonWidget(
       {Key? key,
       required this.day,
       required this.selectedDay,
-      required this.onSelectDay})
+      required this.onSelectDay,
+      required this.dayTextStyle,
+      required this.buttonPadding,
+      this.style,
+      this.selectedStyle})
       : isEnabled = true,
         isHighlighted = false,
         super(key: key);
-  CalendarDayButtonWidget.disabled({Key? key})
-      : day = 0,
+  CalendarDayButtonWidget.disabled({
+    Key? key,
+  })  : day = 0,
         isEnabled = false,
         isHighlighted = false,
         onSelectDay = null,
-        this.selectedDay = 0,
+        selectedDay = 0,
+        buttonPadding = 0,
+        dayTextStyle = const TextStyle(),
+        selectedStyle = null,
+        style = null,
         super(key: key);
   CalendarDayButtonWidget.highlighted(
       {Key? key,
       required this.day,
       required this.selectedDay,
-      required this.onSelectDay})
+      required this.onSelectDay,
+      required this.dayTextStyle,
+      required this.buttonPadding,
+      this.style,
+      this.selectedStyle})
       : isEnabled = true,
         isHighlighted = true,
         super(key: key);
@@ -35,7 +53,7 @@ class CalendarDayButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double fontSize = MediaQuery.of(context).size.width * 0.040;
     return Padding(
-      padding: const EdgeInsets.all(2),
+      padding: EdgeInsets.all(buttonPadding),
       child: isEnabled
           ? isHighlighted
               ? _highlightedContainerBuilder(fontSize, onSelectDay!)
@@ -91,31 +109,33 @@ class CalendarDayButtonWidget extends StatelessWidget {
       fit: BoxFit.contain,
       child: Text(
         text,
-        style: TextStyle(fontSize: fontSize, color: Colors.black),
+        style: dayTextStyle,
       ),
     );
   }
 
   ButtonStyle selectedButtonStyle() {
-    return ElevatedButton.styleFrom(
-      onSurface: Colors.transparent,
-      onPrimary: Colors.transparent,
-      padding: const EdgeInsets.all(0),
-      shadowColor: Colors.transparent,
-      shape: CircleBorder(),
-      primary: Colors.brown,
-    );
+    return selectedStyle ??
+        ElevatedButton.styleFrom(
+          onSurface: Colors.transparent,
+          onPrimary: Colors.transparent,
+          padding: const EdgeInsets.all(0),
+          shadowColor: Colors.transparent,
+          shape: CircleBorder(),
+          primary: Colors.brown, // brown
+        );
   }
 
   ButtonStyle unselectedButtonStyle() {
-    return ElevatedButton.styleFrom(
-      onSurface: Colors.transparent,
-      onPrimary: Colors.transparent,
-      padding: const EdgeInsets.all(0),
-      shadowColor: Colors.transparent,
-      shape: CircleBorder(),
-      primary: Colors.transparent,
-    );
+    return style ??
+        ElevatedButton.styleFrom(
+          onSurface: Colors.transparent,
+          onPrimary: Colors.transparent,
+          padding: const EdgeInsets.all(0),
+          shadowColor: Colors.transparent,
+          shape: CircleBorder(),
+          primary: Colors.transparent,
+        );
   }
 
   ButtonStyle highlightedButtonStyle() {
@@ -125,7 +145,7 @@ class CalendarDayButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.all(0),
       shadowColor: Colors.transparent,
       shape: CircleBorder(),
-      primary: Colors.green,
+      primary: Colors.grey,
     );
   }
 }
