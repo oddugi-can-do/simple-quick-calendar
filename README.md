@@ -90,4 +90,4 @@ class _CalendarPageState extends State<CalendarPage> {
 
 ## Screen Shot
 
-![sample_screen](./docs/src/images/sample_image.PNG)
+![sample_screen](./doc/src/images/sample_image.PNG)
