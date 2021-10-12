@@ -1,5 +1,5 @@
-name: sample_simple_calendar
-description: A example of simple calendar
+name: sample_calendar
+description: A example of simple quick calendar
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,7 +10,7 @@ dependencies:
 
 
 dev_dependencies:
-  simple_calendar:
+  simple_quick_calendar:
     path: ../../
   flutter_test:
     sdk: flutter

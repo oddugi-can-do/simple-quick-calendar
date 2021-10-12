@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_calendar/simple_calendar.dart';
+import 'package:simple_quick_calendar/simple_quick_calendar.dart';
 
 void main() {
   runApp(const CalendarApp());
@@ -50,7 +50,7 @@ class _CalendarPageState extends State<CalendarPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SimpleCalendar(initYear: year, initMonth: month),
+              SimpleQuickCalendar(initYear: year, initMonth: month),
             ],
           ),
         ),
