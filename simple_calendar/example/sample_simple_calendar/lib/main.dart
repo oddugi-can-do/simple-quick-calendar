@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:simple_calendar/simple_calendar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CalendarApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class CalendarApp extends StatelessWidget {
+  const CalendarApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -16,20 +16,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'simple calendar demo'),
+      home: const CalendarPage(title: 'simple calendar demo'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class CalendarPage extends StatefulWidget {
+  const CalendarPage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CalendarPage> createState() => _CalendarPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CalendarPageState extends State<CalendarPage> {
   int year = 0, month = 0;
 
   @override
