@@ -3,6 +3,7 @@
 
 A calendar widget with simple look-like and quickly-started.
 
+
 ## Platform Support
 
 | Android |
@@ -86,3 +87,7 @@ class _CalendarPageState extends State<CalendarPage> {
   }
 }
 ```
+
+## Screen Shot
+
+![sample_screen](./docs/src/images/sample_image.PNG)
