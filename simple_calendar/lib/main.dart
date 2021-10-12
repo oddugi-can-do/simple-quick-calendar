@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_calendar/calendar_widget.dart';
+import 'package:simple_calendar/simple_calendar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Simple Calendar Demo',
+      title: 'Simple Calendar',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'simple calendar demo'),
     );
   }
 }
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              CalendarWidget(initYear: 2021, initMonth: 10),
+              SimpleCalendar(initYear: 2021, initMonth: 10),
             ],
           ),
         ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'calendar_button_widget.dart';
 import 'calendar_util.dart';
 
-class CalendarWidget extends StatefulWidget {
+class SimpleCalendar extends StatefulWidget {
   final int initYear;
   final int initMonth;
   final int initDay;
@@ -18,7 +18,7 @@ class CalendarWidget extends StatefulWidget {
   final double itemAspectRatio;
   // final Locale? locale;
 
-  const CalendarWidget({
+  const SimpleCalendar({
     Key? key,
     required this.initYear,
     required this.initMonth,
@@ -35,10 +35,10 @@ class CalendarWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CalendarWidgetState createState() => _CalendarWidgetState();
+  _SimpleCalendarState createState() => _SimpleCalendarState();
 }
 
-class _CalendarWidgetState extends State<CalendarWidget> {
+class _SimpleCalendarState extends State<SimpleCalendar> {
   List<int> _dayListForMonth = [];
   int year = 0;
   int month = 0;
