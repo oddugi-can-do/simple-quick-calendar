@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'calendar_util.dart';
 
-class SimpleCalendar extends StatefulWidget {
+class SimpleQuickCalendar extends StatefulWidget {
   final int initYear;
   final int initMonth;
   final int initDay;
@@ -16,7 +16,7 @@ class SimpleCalendar extends StatefulWidget {
   final double itemAspectRatio;
   // final Locale? locale;
 
-  const SimpleCalendar({
+  const SimpleQuickCalendar({
     Key? key,
     required this.initYear,
     required this.initMonth,
@@ -33,10 +33,10 @@ class SimpleCalendar extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SimpleCalendarState createState() => _SimpleCalendarState();
+  _SimpleQuickCalendarState createState() => _SimpleQuickCalendarState();
 }
 
-class _SimpleCalendarState extends State<SimpleCalendar> {
+class _SimpleQuickCalendarState extends State<SimpleQuickCalendar> {
   List<int> _dayListForMonth = [];
   int year = 0;
   int month = 0;
