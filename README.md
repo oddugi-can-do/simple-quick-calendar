@@ -1,5 +1,5 @@
 
-# simple-calendar
+# simple-quick-calendar
 
 A calendar widget with simple look-like and quickly-started.
 
