@@ -1,5 +1,5 @@
 
-# simple-calendar
+# simple-quick-calendar
 
 A calendar widget with simple look-like and quickly-started.
 
@@ -13,21 +13,21 @@ A calendar widget with simple look-like and quickly-started.
 
 ## Getting Started
 
-First, import simple_calendar package in your source.
+First, import simple_quick_calendar package in your source.
 ```dart
-import 'package:simple_calendar/simple_calendar.dart';
+import 'package:simple_quick_calendar/simple_quick_calendar.dart';
 ```
 
-And just put SimpleCalendar widget with year and month.
+And just put SimpleQuickCalendar widget with year and month.
 ```dart
-SimpleCalendar(initYear: 2021, initMonth: 10)
+SimpleQuickCalendar(initYear: 2021, initMonth: 10)
 ```
 
 ## Usage
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:simple_calendar/simple_calendar.dart';
+import 'package:simple_quick_calendar/simple_quick_calendar.dart';
 
 void main() {
   runApp(const CalendarApp());
@@ -78,7 +78,7 @@ class _CalendarPageState extends State<CalendarPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SimpleCalendar(initYear: year, initMonth: month),
+              SimpleQuickCalendar(initYear: year, initMonth: month),
             ],
           ),
         ),
@@ -90,4 +90,4 @@ class _CalendarPageState extends State<CalendarPage> {
 
 ## Screen Shot
 
-![sample_screen](./doc/src/images/sample_image.PNG)
+![sample_screen](https://user-images.githubusercontent.com/19565940/137628599-2ea31de5-aebe-4ab6-ba79-41612b35987c.png)

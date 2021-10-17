@@ -14,7 +14,7 @@ class SimpleQuickCalendar extends StatefulWidget {
   final double horizontalPadding;
   final double verticalPadding;
   final double itemAspectRatio;
-  // final Locale? locale;
+  final Locale locale;
 
   const SimpleQuickCalendar({
     Key? key,
@@ -30,6 +30,7 @@ class SimpleQuickCalendar extends StatefulWidget {
     this.horizontalPadding = 2,
     this.verticalPadding = 2,
     this.itemAspectRatio = 1 / 1,
+    this.locale = const Locale('ko', 'KR'),
   }) : super(key: key);
 
   @override
@@ -70,7 +71,9 @@ class _SimpleQuickCalendarState extends State<SimpleQuickCalendar> {
         if (index < 7) {
           return Center(
             child: Text(
-              CalendarUtil.week[index],
+              widget.locale.languageCode == 'ko'
+                  ? CalendarUtil.kr_week[index]
+                  : CalendarUtil.en_week[index],
               style: widget.weekTextStyle ??
                   TextStyle(fontSize: _fontSize, color: Colors.white),
             ),

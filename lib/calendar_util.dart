@@ -1,9 +1,16 @@
 enum TimePoint { past, present, tomorrow, future }
 
 class CalendarUtil {
-  static final List<String> week = ['일', '월', '화', '수', '목', '금', '토'];
-
-  CalendarUtil();
+  static final List<String> kr_week = ['일', '월', '화', '수', '목', '금', '토'];
+  static final List<String> en_week = [
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thur',
+    'Fri',
+    'Sat'
+  ];
 
   static List<int> dayListForMonth(int year, int month) {
     int shift = DateTime.utc(year, month, 1).weekday % 7;
@@ -14,7 +21,6 @@ class CalendarUtil {
     return ret;
   }
 
-  // int today(int, int) : 오늘이 속한 달일 때 오늘이 며칠인지 알려줌.
   static bool isIncludeToday(int year, int month) {
     DateTime now = DateTime.now();
     if (now.year == year && now.month == month) {
@@ -23,7 +29,6 @@ class CalendarUtil {
     return false;
   }
 
-  // 입력 받은게 past : -1, present : 0, future : 1
   static TimePoint decidePastPresentFuture(int year, int month, int day) {
     if (thisYear() < year) {
       return TimePoint.future;
