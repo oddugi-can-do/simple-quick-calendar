@@ -1,7 +1,7 @@
 name: simple_quick_calendar
 description: A calendar widget with simple look-like and quickly-started.
-version: 0.0.1
-homepage: https://github.com/chongin12/simple-calendar
+version: 0.0.2
+homepage: https://github.com/chongin12/simple-quick-calendar
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
